@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -19,18 +21,21 @@ public class DashboardPage {
 	public void setlblTitleMenu(String lblTitleMenu) {
 		this.lblTitleMenu = lblTitleMenu;
 	}
-
-	private By uId = By.xpath("//li[1]/span[1]/span[1]");
-	private By title = By.xpath("//span[@class='nomall']");
-	private By iframe = By.xpath("//div[2]/iframe[1]");
+	@FindBy(xpath="//li[1]/span[1]/span[1]")
+	private WebElement uId;
+	@FindBy(xpath="//span[@class='nomall']")
+	private WebElement title;
+	@FindBy(xpath="//div[2]/iframe[1]")
+	private WebElement iframe;
 	public DashboardPage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
 		this.driver = driver;
+		PageFactory.initElements(driver, this);
 	}
 	public void runAll(String subName1, String subName2, String subName3) throws InterruptedException {		
 		getSubMenu1(subName1);
 		getSubMenu2(subName2);	
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		if(subName3!="") {
 			getSubMenu3(subName3);
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
@@ -69,7 +74,7 @@ public class DashboardPage {
 					.click()
 					.build();
 			mouseOverHome.perform();  	
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
 			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(iframe));		
 		}
 		catch(Exception e) {
@@ -77,10 +82,10 @@ public class DashboardPage {
 		}
 	}
 	public String getUsernameDashboard() {
-		return driver.findElement(uId).getText();
+		return uId.getText();
 	}
 	public String getTitle() {
-		String getTitle = driver.findElement(title).getText();
+		String getTitle = (title).getText();
 		System.out.println("Tên danh mục: " + getTitle);
 		return getTitle;
 	} 

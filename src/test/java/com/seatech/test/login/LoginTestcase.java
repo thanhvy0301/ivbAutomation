@@ -33,7 +33,7 @@ public class LoginTestcase extends common{
 	public void DashboardTestcase() throws InterruptedException {
 		try {
 			//subMenu1/subMenu2/subMenu3
-			dashboardpage.runAll("Quản lý thông tin", "Bảo mật", "Thông Tin Khách Hàng");			
+			dashboardpage.runAll("Quản lý thông tin","Phê duyệt Giao dịch", "Thanh Toán Lương");			
 		}
 		catch (Exception e) {
 			System.out.println(e);
@@ -44,7 +44,7 @@ public class LoginTestcase extends common{
 		try {
 			Assert.assertTrue(dashboardpage
 					.getTitle()
-					.contains(dashboardpage.getlblTitleMenu()));
+					.contains(dashboardpage.getlblTitleMenu()));			
 		}
 		catch (Exception e) {
 			e.printStackTrace();
