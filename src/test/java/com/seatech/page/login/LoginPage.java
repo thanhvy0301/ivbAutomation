@@ -1,6 +1,5 @@
 package com.seatech.page.login;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,47 +22,39 @@ public class LoginPage{
 	private WebElement btnAgree;
 	@FindBy(xpath = "//input[@id='vcode']")
 	private WebElement txbCaptcha;
-	
+	String lbluId;
+	public String getLbluId() {
+		return lbluId;
+	}
+	public void setLbluId(String lbluId) {
+		this.lbluId = lbluId;
+	}
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		// TODO Auto-generated constructor stub
 	}
 	public DashboardPage Login(String username, String password, String captcha) throws InterruptedException {
-		try {
-			// Các bước đăng nhập
-			enterUserName(username);
-			enterPassword(password);
-			enterCaptcha(captcha);
-			clickLogin();
+		try {			
+			txbUserName.sendKeys(username);
+			setLbluId(username);
+			txbPassword.sendKeys(password);
+			txbCaptcha.sendKeys(captcha);
+			btnLogin.click();
 			boolean textnoti = (txtNotice).isDisplayed();
 			if (textnoti) {
 				System.out.println("Trang noti hiển thị");
 				Thread.sleep(3000);
-				(btnAgree).click();
+				btnAgree.click();
 				return new DashboardPage(driver);
-			} else {
+			} 
+			else{
 				System.out.println("Trang noti không hiển thị");
-				return new DashboardPage(driver);
+				//return new DashboardPage(driver);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return new DashboardPage(driver);
-	}
-	public String enterUserName(String username) throws InterruptedException {
-		(txbUserName).sendKeys(username);	
-		Thread.sleep(3000);
-		return username;
-	}
-	public void enterPassword(String password) throws InterruptedException {
-		(txbPassword).sendKeys(password);	
-		Thread.sleep(3000);
-	}
-	public void clickLogin() {
-		(btnLogin).click();
-	}
-	public void enterCaptcha(String captcha) {
-		(txbCaptcha).sendKeys(captcha);
 	}
 }

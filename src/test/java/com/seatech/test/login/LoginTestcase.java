@@ -10,21 +10,27 @@ public class LoginTestcase extends common{
 	private WebDriver driver;
 	public LoginPage loginpage;
 	public DashboardPage dashboardpage;
-
 	@BeforeClass
 	public void setUp() {
 		driver = getDriver();
 	}
+	
 	@Test(priority=0, description="Login - Verify Login")
 	public void LoginTestcase() throws InterruptedException{
 		System.out.println(driver);
 		loginpage = new LoginPage(driver);
 		try {
 			//Login
-			dashboardpage = loginpage.Login("6285889_checker", "111111", "12345");
+			dashboardpage = loginpage.Login("6285889_maker", "111111", "12345");
 			//Verify Login		
 			String uidLabel = dashboardpage.getUsernameDashboard();	
-			Assert.assertTrue(uidLabel.toUpperCase().contains("6285889_CHECKER"));
+			Assert.assertTrue(
+					uidLabel
+					.toUpperCase()
+					.contains(
+							loginpage
+							.getLbluId()
+							.toUpperCase()));
 		} catch (Exception e) {			
 			e.printStackTrace();
 		}
@@ -33,7 +39,7 @@ public class LoginTestcase extends common{
 	public void DashboardTestcase() throws InterruptedException {
 		try {
 			//subMenu1/subMenu2/subMenu3
-			dashboardpage.runAll("Quản lý thông tin","Phê duyệt Giao dịch", "Thanh Toán Lương");			
+			dashboardpage.runAll("Tài khoản", "Sao Kê Tài Khoản", "");			
 		}
 		catch (Exception e) {
 			System.out.println(e);

@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class DashboardPage {
 	WebDriver driver;
 	WebDriverWait wait;
-	String lblTitleMenu;
+	String lblTitleMenu;	
 	public String getlblTitleMenu() {
 		return lblTitleMenu;
 	}
