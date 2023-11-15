@@ -31,15 +31,17 @@ public class LoginPage{
 	}
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
-		PageFactory.initElements(driver, this);
+//		PageFactory.initElements(driver, this);
 		// TODO Auto-generated constructor stub
 	}
-	public DashboardPage Login(String username, String password, String captcha) throws InterruptedException {
-		try {			
+	public DashboardPage Login(String username, String password) throws InterruptedException {
+		try {
 			txbUserName.sendKeys(username);
 			setLbluId(username);
+			Thread.sleep(2000);
 			txbPassword.sendKeys(password);
-			txbCaptcha.sendKeys(captcha);
+			Thread.sleep(10000);
+//			txbCaptcha.sendKeys(captcha);
 			btnLogin.click();
 			boolean textnoti = (txtNotice).isDisplayed();
 			if (textnoti) {
@@ -47,7 +49,7 @@ public class LoginPage{
 				Thread.sleep(3000);
 				btnAgree.click();
 				return new DashboardPage(driver);
-			} 
+			}
 			else{
 				System.out.println("Trang noti không hiển thị");
 				//return new DashboardPage(driver);

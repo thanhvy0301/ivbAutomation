@@ -9,6 +9,8 @@
           <include name="LoginTestcase"/>
           <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="DashboardTestcase"/>
+          <include name="verifyTitle"/>
         </methods>
       </class> <!-- com.seatech.test.login.LoginTestcase -->
     </classes>

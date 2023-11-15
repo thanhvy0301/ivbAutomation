@@ -1,6 +1,7 @@
 package com.seatech.page.dashboard;
 
 import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,7 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class DashboardPage {
 	WebDriver driver;
 	WebDriverWait wait;
-	String lblTitleMenu;	
+	String lblTitleMenu;
 	public String getlblTitleMenu() {
 		return lblTitleMenu;
 	}
@@ -30,25 +31,25 @@ public class DashboardPage {
 	public DashboardPage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
 		this.driver = driver;
-		PageFactory.initElements(driver, this);
+//		PageFactory.initElements(driver, this);
 	}
-	public void runAll(String subName1, String subName2, String subName3) throws InterruptedException {		
+	public void runAll(String subName1, String subName2, String subName3) throws InterruptedException {
 		getSubMenu1(subName1);
-		getSubMenu2(subName2);	
+		getSubMenu2(subName2);
 		Thread.sleep(2000);
 		if(subName3!="") {
 			getSubMenu3(subName3);
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
-			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(iframe));			
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(iframe));
 			setlblTitleMenu(subName3);
-		}		
+		}
 		else {
 			setlblTitleMenu(subName2);
 		}
 	}
 	public void getSubMenu1(String subName1) throws InterruptedException {
 		WebElement elName = driver.findElement(By.xpath("//span[contains(.,'"+subName1+"')]"));
-		elName.click();	
+		elName.click();
 		Thread.sleep(3000);
 	}
 	public void getSubMenu2(String subName2) {
@@ -59,7 +60,7 @@ public class DashboardPage {
 					.moveToElement(elName2)
 					.click()
 					.build();
-			mouseOverHome.perform();  		
+			mouseOverHome.perform();
 		}
 		catch (Exception e){
 			System.out.println(e);
@@ -73,9 +74,9 @@ public class DashboardPage {
 					.moveToElement(elName3)
 					.click()
 					.build();
-			mouseOverHome.perform();  	
+			mouseOverHome.perform();
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
-			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(iframe));		
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(iframe));
 		}
 		catch(Exception e) {
 			e.printStackTrace();
@@ -88,6 +89,6 @@ public class DashboardPage {
 		String getTitle = (title).getText();
 		System.out.println("Tên danh mục: " + getTitle);
 		return getTitle;
-	} 
+	}
 
 }
