@@ -31,7 +31,7 @@ public class DashboardPage {
 	public DashboardPage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
 		this.driver = driver;
-//		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver, this);
 	}
 	public void runAll(String subName1, String subName2, String subName3) throws InterruptedException {
 		getSubMenu1(subName1);

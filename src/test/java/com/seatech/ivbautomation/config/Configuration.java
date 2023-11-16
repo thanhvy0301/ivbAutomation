@@ -7,8 +7,8 @@ public class Configuration {
     @BeforeTest
     public void setUpAll() {
         String chromeDriverPath = System.getenv("chromeDriverPath");
-        String firefoxDriverPath = System.getenv("chromeDriverPath");
-        String edgeDriverPath = System.getenv("chromeDriverPath");
+        String firefoxDriverPath = System.getenv("edgeDriverPath");
+        String edgeDriverPath = System.getenv("firefoxDriverPath");
         String baseUrl = System.getenv("baseUrl");
 
         System.setProperty("webdriver.chrome.driver", chromeDriverPath);

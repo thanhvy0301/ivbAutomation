@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.seatech.ivbautomation.common.common;
+import com.seatech.page.common.common;
 import com.seatech.page.dashboard.DashboardPage;
 import com.seatech.page.login.LoginPage;
 import io.qameta.allure.*;
@@ -14,9 +14,8 @@ public class LoginTestcase extends common{
 	private WebDriver driver;
 	public LoginPage loginpage;
 	public DashboardPage dashboardpage;
-	common com = new common();
 	@BeforeClass
-	public void setUp() {
+	public void setUp() {		
 		driver = getDriver();
 	}
 
@@ -30,7 +29,7 @@ public class LoginTestcase extends common{
 			dashboardpage = loginpage.Login("6285889_maker", "111111");
 			//Verify Login
 			String uidLabel = dashboardpage.getUsernameDashboard();
-			Assert.assertTrue(uidLabel.toUpperCase().contains(loginpage.getLbluId().toUpperCase()));
+			Assert.assertTrue(uidLabel.toUpperCase().contains(loginpage.getLbluId()));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

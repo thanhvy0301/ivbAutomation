@@ -12,8 +12,6 @@
           <include name="LoginTestcase"/>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="verifyTitle"/>
-          <include name="DashboardTestcase"/>
         </methods>
       </class> <!-- com.seatech.test.login.LoginTestcase -->
     </classes>

@@ -4,7 +4,7 @@
 	<listeners><listener class-name="listeners.TestAllureListener"></listener></listeners>
   <test thread-count="5" name="Test">
     <classes>
-      <class name="com.seatech.ivbautomation.common.common"/>
+      <class name="com.seatech.page.common.common"/>
       <class name="com.seatech.test.login.LoginTestcase"/>
     </classes>
   </test> <!-- Test -->

@@ -7,7 +7,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import com.seatech.ivbautomation.common.common;
+import com.seatech.page.common.common;
 
 import io.qameta.allure.Attachment;
 
@@ -26,7 +26,7 @@ public class TestAllureListener implements ITestListener{
 	    @Override
 	    public void onStart(ITestContext iTestContext) {	    	
 	    	 //Initialize the com object
-	        driver = com.getDriver();
+	        driver = common.getDriver();
 	    }
 
 		@Override
@@ -47,7 +47,12 @@ public class TestAllureListener implements ITestListener{
 	    }
 	    @Attachment(value = "Screenshot", type = "image/png")
 	    public byte[] saveScreenshotOnFailure() {
-	        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+	        if (driver != null) {
+	            return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+	        } else {
+	            System.out.println("Driver is null. Cannot take screenshot.");
+	            return new byte[0];
+	        }
 	    }
 	    @Override
 	    public void onTestFailure(ITestResult iTestResult) {
