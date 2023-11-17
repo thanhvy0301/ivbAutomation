@@ -15,6 +15,7 @@ import com.seatech.page.common.common;
 import com.seatech.test.login.LoginTestcase;
 
 import io.qameta.allure.Attachment;
+import io.qameta.allure.Owner;
 
 public class TestAllureListener implements ITestListener{
 	 private WebDriver driver;
@@ -39,10 +40,9 @@ public class TestAllureListener implements ITestListener{
 	    public void onFinish(ITestContext iTestContext) {
 	    }
 
-	    @Override
+	    @Override	    
 	    public void onTestStart(ITestResult iTestResult) {
-//	        Log.info(getTestName(iTestResult) + " test is starting...");
-//	        ExtentTestManager.saveToReport(iTestResult.getName(), iTestResult.getTestName());
+	    	
 	    }
 
 	    @Override

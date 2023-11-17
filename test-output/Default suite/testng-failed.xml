@@ -5,10 +5,10 @@
     <classes>
       <class name="com.seatech.test.login.LoginTestcase">
         <methods>
-          <include name="takeScreenshot"/>
           <include name="beforeTest"/>
           <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="verifyUsername"/>
           <include name="verifyTitle"/>
         </methods>
       </class> <!-- com.seatech.test.login.LoginTestcase -->

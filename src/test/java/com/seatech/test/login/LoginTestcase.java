@@ -1,14 +1,7 @@
 package com.seatech.test.login;
 
-import java.io.File;
-
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.io.FileHandler;
 import org.testng.Assert;
-import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -16,6 +9,7 @@ import com.seatech.page.common.common;
 import com.seatech.page.dashboard.DashboardPage;
 import com.seatech.page.login.LoginPage;
 import io.qameta.allure.*;
+@Owner("Vy Doan")
 public class LoginTestcase extends common{
 
 	private WebDriver driver;
@@ -24,9 +18,10 @@ public class LoginTestcase extends common{
 	@BeforeClass
 	public void setUp() {		
 		driver = getDriver();
-	}
-	@Test(priority=0, description="Login")
-	@Step("Login with username - password")
+	}	
+	@Test(priority=0, description="Login")	
+	@Step("Login with username - password ") 
+	@Feature("Login") //feature's name
 	public void LoginTestcase() throws InterruptedException{
 		System.out.println(driver);
 		loginpage = new LoginPage(driver);
@@ -40,16 +35,18 @@ public class LoginTestcase extends common{
 	}
 	
 	@Test(priority=1, description="Verify Login")
-	@Step("Login with username {0} - password {1}")
-//	@Severity(SeverityLevel.BLOCKER)
+	@Step("Verify login")	
+	@Feature("Login")
+	@Severity(SeverityLevel.BLOCKER) //
 	public void verifyUsername(){
 		String uidLabel = dashboardpage.getUsernameDashboard();
-		Assert.assertTrue(uidLabel.toUpperCase().contains(loginpage.getLbluId()));
+		Assert.assertTrue(uidLabel.toUpperCase().contains("123"));		
 	}
 	
 	@Test(priority=2, description="Click choose sub menu")
 	@Step("Click sub menu")
-//	@Severity(SeverityLevel.BLOCKER)
+	@Feature("Menu")
+	@Severity(SeverityLevel.NORMAL)
 	public void DashboardTestcase() throws InterruptedException {
 		try {
 			//subMenu1/subMenu2/subMenu3
@@ -62,6 +59,8 @@ public class LoginTestcase extends common{
 	
 	@Test(priority=3, description="Verify Title")
 	@Step("Verify Title")
+	@Feature("Menu")
+	@Severity(SeverityLevel.NORMAL)
 	public void verifyTitle() {
 		try {
 			Assert.assertTrue(dashboardpage
