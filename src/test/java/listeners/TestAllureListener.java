@@ -1,21 +1,15 @@
 package listeners;
 
-import java.io.File;
-
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.io.FileHandler;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-
-import com.seatech.page.common.common;
+import com.seatech.pages.common.common;
 import com.seatech.test.login.LoginTestcase;
 
 import io.qameta.allure.Attachment;
-import io.qameta.allure.Owner;
 
 public class TestAllureListener implements ITestListener{
 	 private WebDriver driver;

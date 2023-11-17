@@ -5,15 +5,15 @@
     <listener class-name="listeners.TestAllureListener"/>
   </listeners>
   <test thread-count="5" name="Test(failed)">
-    <parameter name="browser" value="firefox"/>
+    <parameter name="browser" value="chrome"/>
     <classes>
       <class name="com.seatech.test.login.LoginTestcase">
         <methods>
           <include name="beforeTest"/>
+          <include name="LoginTestcase"/>
           <include name="tearDown"/>
           <include name="setUp"/>
           <include name="verifyUsername"/>
-          <include name="verifyTitle"/>
         </methods>
       </class> <!-- com.seatech.test.login.LoginTestcase -->
     </classes>
