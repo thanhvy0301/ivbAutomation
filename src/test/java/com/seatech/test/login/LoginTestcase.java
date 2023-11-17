@@ -37,10 +37,10 @@ public class LoginTestcase extends common{
 	@Test(priority=1, description="Verify Login")
 	@Step("Verify login")	
 	@Feature("Login")
-	@Severity(SeverityLevel.BLOCKER) //
+	@Severity(SeverityLevel.BLOCKER) //specify the severity level of a test method
 	public void verifyUsername(){
 		String uidLabel = dashboardpage.getUsernameDashboard();
-		Assert.assertTrue(uidLabel.toUpperCase().contains("123"));		
+		Assert.assertTrue(uidLabel.toUpperCase().contains(loginpage.getLbluId().toUpperCase()));		
 	}
 	
 	@Test(priority=2, description="Click choose sub menu")
@@ -65,7 +65,7 @@ public class LoginTestcase extends common{
 		try {
 			Assert.assertTrue(dashboardpage
 					.getTitle()
-					.contains("ABC"));
+					.contains(dashboardpage.getlblTitleMenu()));
 		}
 		catch (Exception e) {
 			e.printStackTrace();

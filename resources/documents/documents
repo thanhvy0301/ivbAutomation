@@ -1,0 +1,4 @@
+* Link @Annotations Allure: https://sarkershantonu.github.io/2021/04/29/allure2-annotations/
+* Lưu ý: 
+	- Bắt buộc run test bằng file testng.xml, nếu không sẽ sinh ra 2 suit ở report và run bằng browser mặc định @Optional
+	- Chạy browser tùy chọn: testng.xml -> Đổi  <value="chrome" /> thành tên browser muốn chạy
