@@ -2,31 +2,31 @@
 <testng-results ignored="0" total="4" passed="2" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-17T11:45:30 ICT" name="Suite" finished-at="2023-11-17T11:47:00 ICT" duration-ms="89313">
+  <suite started-at="2023-11-17T13:16:16 ICT" name="Suite" finished-at="2023-11-17T13:18:19 ICT" duration-ms="122034">
     <groups>
     </groups>
-    <test started-at="2023-11-17T11:45:30 ICT" name="Test" finished-at="2023-11-17T11:47:00 ICT" duration-ms="89313">
+    <test started-at="2023-11-17T13:16:16 ICT" name="Test" finished-at="2023-11-17T13:18:19 ICT" duration-ms="122034">
       <class name="com.seatech.test.login.LoginTestcase">
-        <test-method is-config="true" signature="beforeTest(java.lang.String)[pri:0, instance:com.seatech.test.login.LoginTestcase@2e8a1ab4]" started-at="2023-11-17T11:45:31 ICT" name="beforeTest" finished-at="2023-11-17T11:45:36 ICT" duration-ms="5036" status="PASS">
+        <test-method is-config="true" signature="beforeTest(java.lang.String)[pri:0, instance:com.seatech.test.login.LoginTestcase@25d93198]" started-at="2023-11-17T13:16:17 ICT" name="beforeTest" finished-at="2023-11-17T13:16:26 ICT" duration-ms="8983" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[chrome]]>
+                <![CDATA[edge]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.seatech.test.login.LoginTestcase@2e8a1ab4]" started-at="2023-11-17T11:45:36 ICT" name="setUp" finished-at="2023-11-17T11:45:36 ICT" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.seatech.test.login.LoginTestcase@25d93198]" started-at="2023-11-17T13:16:26 ICT" name="setUp" finished-at="2023-11-17T13:16:26 ICT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="LoginTestcase()[pri:0, instance:com.seatech.test.login.LoginTestcase@2e8a1ab4]" started-at="2023-11-17T11:45:36 ICT" name="LoginTestcase" description="Login" finished-at="2023-11-17T11:45:53 ICT" duration-ms="17075" status="PASS">
+        <test-method signature="LoginTestcase()[pri:0, instance:com.seatech.test.login.LoginTestcase@25d93198]" started-at="2023-11-17T13:16:26 ICT" name="LoginTestcase" description="Login" finished-at="2023-11-17T13:17:10 ICT" duration-ms="44511" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginTestcase -->
-        <test-method signature="verifyUsername()[pri:1, instance:com.seatech.test.login.LoginTestcase@2e8a1ab4]" started-at="2023-11-17T11:45:53 ICT" name="verifyUsername" description="Verify Login" finished-at="2023-11-17T11:45:53 ICT" duration-ms="59" status="FAIL">
+        <test-method signature="verifyUsername()[pri:1, instance:com.seatech.test.login.LoginTestcase@25d93198]" started-at="2023-11-17T13:17:10 ICT" name="verifyUsername" description="Verify Login" finished-at="2023-11-17T13:17:10 ICT" duration-ms="93" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
@@ -72,11 +72,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyUsername -->
-        <test-method signature="DashboardTestcase()[pri:2, instance:com.seatech.test.login.LoginTestcase@2e8a1ab4]" started-at="2023-11-17T11:45:53 ICT" name="DashboardTestcase" description="Click choose sub menu" finished-at="2023-11-17T11:46:59 ICT" duration-ms="66269" status="PASS">
+        <test-method signature="DashboardTestcase()[pri:2, instance:com.seatech.test.login.LoginTestcase@25d93198]" started-at="2023-11-17T13:17:11 ICT" name="DashboardTestcase" description="Click choose sub menu" finished-at="2023-11-17T13:18:18 ICT" duration-ms="67238" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DashboardTestcase -->
-        <test-method signature="verifyTitle()[pri:3, instance:com.seatech.test.login.LoginTestcase@2e8a1ab4]" started-at="2023-11-17T11:46:59 ICT" name="verifyTitle" description="Verify Title" finished-at="2023-11-17T11:46:59 ICT" duration-ms="39" status="FAIL">
+        <test-method signature="verifyTitle()[pri:3, instance:com.seatech.test.login.LoginTestcase@25d93198]" started-at="2023-11-17T13:18:18 ICT" name="verifyTitle" description="Verify Title" finished-at="2023-11-17T13:18:18 ICT" duration-ms="39" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
@@ -122,7 +122,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyTitle -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.seatech.test.login.LoginTestcase@2e8a1ab4]" started-at="2023-11-17T11:47:00 ICT" name="tearDown" finished-at="2023-11-17T11:47:00 ICT" duration-ms="184" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.seatech.test.login.LoginTestcase@25d93198]" started-at="2023-11-17T13:18:18 ICT" name="tearDown" finished-at="2023-11-17T13:18:19 ICT" duration-ms="373" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

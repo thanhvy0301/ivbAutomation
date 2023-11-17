@@ -1,0 +1,8 @@
+1 - Tải gói allure tại github (https://github.com/allure-framework/allure2/releases/tag/2.24.0)
+2 - Window -> Nhập "Edit the system environments variable" -> Chọn Environment Variables
+3 - Chọn New (System variables) -> Nhập "ALLURE_HOME" tại ô Variable name -> Chọn Browse Directory -> Trỏ tới đường dẫn chứa folder allure đã giải nén vừa tải (vd: D:\allure-2.24.0) -> OK
+4 - Chọn Path -> Edit -> Nhập "%ALLURE_HOME%\bin" -> OK 
+(Mở CMD kiểm tra đã cài thành công hay chưa "allure --version")
+** Chuyển thành Maven Project sau khi clone từ git về 
+** Cách run allure
+1. Mở Terminal của project -> Nhập allure serve
