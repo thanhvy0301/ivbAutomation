@@ -10,6 +10,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -22,13 +23,26 @@ public class common {
 	public static WebDriver getDriver() {
 		return driver;
 	}
-	@SuppressWarnings("deprecation")
 	@BeforeClass
-	public void beforeTest() {
-		driver = new ChromeDriver();
+	@Parameters("browser") //Change browser -> testng.xml -> parameter <name> -> chrome/edge
+	public void beforeTest(@Optional("edge") String browser) {
+		setDriver(browser);
 		driver.manage().window().maximize();
 		driver.get(baseUrl);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	}
+	private void setDriver(String browser) {
+		switch (browser.toLowerCase()) 
+		{
+		case "chrome":
+			driver = new ChromeDriver();			
+			break;
+		case "edge":
+			driver = new EdgeDriver();
+			break;
+		default:
+			throw new IllegalArgumentException("Unsupported browser: " + browser);
+		}
 	}
 	@AfterClass
 	public void tearDown() {
