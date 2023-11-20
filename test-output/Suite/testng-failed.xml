@@ -13,7 +13,6 @@
           <include name="LoginTestcase"/>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="verifyUsername"/>
         </methods>
       </class> <!-- com.seatech.test.login.LoginTestcase -->
     </classes>

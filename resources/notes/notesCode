@@ -1,0 +1,12 @@
+
+	//	@Test(priority=2, description="Logout")
+	//	@Step("Logout")	
+	//	@Feature("Login")
+	//	@Severity(SeverityLevel.BLOCKER) //specify the severity level of a test method
+	//	public void Logout(){
+	//			try {
+	//				dashboardpage.Logout();				
+	//			}catch (Exception e){
+	//				e.printStackTrace();
+	//			}
+	//	}

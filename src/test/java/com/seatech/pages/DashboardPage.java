@@ -12,10 +12,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.seatech.pages.common.ExcelHelpers;
+
 public class DashboardPage {
 	WebDriver driver;
 	WebDriverWait wait;
 	String lblTitleMenu;
+	
 	public String getlblTitleMenu() {
 		return lblTitleMenu;
 	}
@@ -51,8 +54,7 @@ public class DashboardPage {
 		}
 		else {
 			setlblTitleMenu(subName2);
-		}
-		Logout();		
+		}	
 	}
 	public void getSubMenu1(String subName1) throws InterruptedException {
 		WebElement elName = driver.findElement(By.xpath("//span[contains(.,'"+subName1+"')]"));
@@ -97,19 +99,18 @@ public class DashboardPage {
 		System.out.println("Tên danh mục: " + getTitle);
 		return getTitle;
 	}
-	public void Logout() throws InterruptedException {
+	public void logout() throws InterruptedException {
 		btnLogout.click();
 		Thread.sleep(2000);
 		driver.switchTo().alert().accept();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.visibilityOf(txtVerifyLogout));		
-		Thread.sleep(2000);
+		changeAccount();
 	}
 	public String verifyLogout() {
 		return txtVerifyLogout.getText();
 	}
 	public void changeAccount() {
 		txtVerifyLogout.click();
-	}
-
+	}	 
 }

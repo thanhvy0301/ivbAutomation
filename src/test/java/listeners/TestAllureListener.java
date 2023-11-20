@@ -13,6 +13,7 @@ import io.qameta.allure.Attachment;
 
 public class TestAllureListener implements ITestListener{
 	 private WebDriver driver;
+	 
 	 common com;
 	 LoginTestcase logintestcase;
 	    public String getTestName(ITestResult result) {
@@ -38,7 +39,6 @@ public class TestAllureListener implements ITestListener{
 	    public void onTestStart(ITestResult iTestResult) {
 	    	
 	    }
-
 	    @Override
 	    public void onTestSuccess(ITestResult iTestResult) {
 //	        Log.info(getTestName(iTestResult) + " test is passed.");
@@ -52,7 +52,7 @@ public class TestAllureListener implements ITestListener{
 	    @Override
 	    public void onTestFailure(ITestResult iTestResult) {
 	    	saveScreenshotOnFailure(driver);
-	    	saveLogs(iTestResult.getMethod().getConstructorOrMethod().getName());
+	    	saveLogs(iTestResult.getMethod().getConstructorOrMethod().getName());	    	
 	    }
  	  	    
 	    @Attachment(value="Stacktrace", type ="text/plain")
@@ -60,16 +60,5 @@ public class TestAllureListener implements ITestListener{
 			return message;
 			// TODO Auto-generated method stub			
 		}
-		@Override
-	    public void onTestSkipped(ITestResult iTestResult) {
-//	        Log.warn(getTestName(iTestResult) + " test is skipped.");
-//	        ExtentTestManager.logMessage(Status.SKIP, getTestName(iTestResult) + " test is skipped.");
-	    }
-
-	    @Override
-	    public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
-//	        Log.error("Test failed but it is in defined success ratio " + getTestName(iTestResult));
-//	        ExtentTestManager.logMessage("Test failed but it is in defined success ratio " + getTestName(iTestResult));
-	    }
 	    
 	}
