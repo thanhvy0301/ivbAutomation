@@ -51,6 +51,7 @@ public class DashboardPage {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
 			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(iframe));
 			setlblTitleMenu(subName3);
+			driver.switchTo().defaultContent();
 		}
 		else {
 			setlblTitleMenu(subName2);
